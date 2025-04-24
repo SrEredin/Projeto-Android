@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+#app {
+    width: 100vw;
+    height: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Garante que o conteúdo fique no topo */
+    height: 100vh; /* Agora ocupa toda a tela */
+    background-color: #f2eadf;
+    overflow-x: hidden; /* Impede rolagem horizontal */
+}
+
+.corpo_app {
+    position: relative;
+    max-width: 420px; /* Define um limite máximo para não ficar exagerado */
+    background-color: #fff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    width: 100%;
+}
+
+header {
+    height: 80px;
+    display: flex;
+    position: relative;
+    background: green;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+header .logo {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+header .acoes {
+    display: flex;
+    position: relative;
+    gap: 15px;
+}
+
+header .acoes a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+}
+
+.abas input {
+    visibility: hidden;
+    display: none;
+}
+
+.buttons {
+    display: flex;
+    position: relative;
+    background: green;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.buttons label {
+    width: 33.33%;
+    color: white;
+    opacity: 0.75;
+    text-align: center;
+    padding: 5px 0;
+    font-weight: 700;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.abas input:nth-child(1):checked ~ .buttons label:nth-child(1),
+.abas input:nth-child(2):checked ~ .buttons label:nth-child(2),
+.abas input:nth-child(3):checked ~ .buttons label:nth-child(3) {
+    opacity: 1;
+}
+
+.underline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 33.333%;
+    background-color: #fff;
+    transition: 0.5s;
+}
+
+.abas input:nth-child(1):checked ~ .buttons .underline {
+    left: 0;
+}
+
+.abas input:nth-child(2):checked ~ .buttons .underline {
+    left: 33.333%;
+}
+
+.abas input:nth-child(3):checked ~ .buttons .underline {
+    left: 66.778%;
+}
+
+.content {
+    display: flex;
+    position: relative;
+    width: calc(340px * 3);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.content .box {
+    position: relative;
+    width: 340px;
+}
+
+.abas input:nth-child(1):checked ~ .content {
+    left: calc(340px * 0);
+}
+
+.abas input:nth-child(2):checked ~ .content {
+    left: calc(340px * -1);
+}
+
+.abas input:nth-child(3):checked ~ .content {
+    left: calc(340px * -2);
+}
+
+.content .data {
+    position: relative;
+    width: 100%;
+    height: 510px;
+}
+
+.chatlist {
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.chatlist .block {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    gap: 10px;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.chatlist .block .imgbx {
+    position: relative;
+    min-width: 45px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.chatlist .block .imgbx img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chatlist .block .details {
+    position: relative;
+    width: 100%;
+}
+
+.chatlist .block .details .listHead {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chatlist .block .details .listHead h4 {
+    font-size: 1em;
+    width: 100%;
+    font-weight: 600;
+    color: black;
+}
+
+.chatlist .block .details .listHead .time {
+    font-size: 0.75em;
+    color: #555;
+}
+
+.msg_resumida {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatlist .block .details p {
+    display: -webkit-box;
+    color: #555;
+    font-size: 0.9em;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.chatlist .block.unred .details .listHead .time {
+    color: green;
+}
+
+.chatlist .block.unred .details p {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.msg_resumida b {
+    display: flex;
+    background: green;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75em;
+}
+
+.chatBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 10000;
+}
+
+.chatBox.hide {
+    display: none;
+}
+
+.chatBox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.chat_header {
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    background: green;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat_header .imgcontent {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.chat_header .imgcontent .button{
+    color: white;
+    cursor: pointer;
+    font-size: 1.25em;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.chat_header .imgcontent .imgbx {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.chat_header .imgcontent .imgbx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chat_header .imgcontent h3 {
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1.1em;
+}
+
+.chat_header .imgcontent h3 span {
+    font-size: 0.7em;
+    font-weight: 400;
+}
+
+.acoesBtns {
+    position: relative;
+    display: flex;
+    color: #fff;
+    gap: 15px;
+}
+
+.messageBox {
+    position: relative;
+    padding: 20px;
+    height: calc(100vh - 80px); /* Subtrair a altura do cabeçalho para ajustar a altura da área de mensagens */
+    overflow-y: auto; /* Adicionar rolagem quando o conteúdo ultrapassar a altura da caixa */
+}
+
+.messageBox .message {
+    position: relative;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+}
+
+.messageBox .message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    border: 10px solid transparent;
+    border-top: 10px solid #fff;
+}
+
+.time {
+    position: relative;
+    display: block;
+    font-size: 0.7em;
+    width: 100%;
+    text-align: end;
+    color: #777;
+}
+
+.messageInput {
+    position: fixed;  /* Fixar o input na parte inferior da tela */
+    bottom: 0;        /* Garantir que ele fique na parte inferior */
+    left: 0;
+    width: 20%;      /* Garantir que ocupe toda a largura */
+    padding: 10px 20px; /* Ajuste no padding para mais conforto */
+    background: white; /* Fundo branco para visibilidade */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque */
+    z-index: 9999;
+}
+
+.messageInput .input {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.messageInput .input i {
+    color: #777;
+    cursor: pointer;
+    font-size: 1.4em;
+}
