@@ -1,143 +1,194 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#2196f3">
-    <title>WhatsApp 2</title>
-    <link rel="stylesheet" href="lib/framework7-bundle.min.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="css/remixicon/remixicon.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WhatsApp 2</title>
+  <link rel="stylesheet" href="lib/framework7-bundle.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="css/remixicon/remixicon.css">
 </head>
 <body>
-    <div id="app">
-        <div class="view view-main">
-            <div class="toolbar toolbar-bottom">
-                <div class="toolbar-inner display-flex"></div>
+  <div id="app">
+    <div class="view view-main">
+      <div class="toolbar toolbar-bottom">
+        <div class="toolbar-inner display-flex"></div>
+      </div>
+      <div data-name="index" class="page color-theme-blue">
+        <header>
+          <a href="#" class="logo">WhatsApp 2</a>
+          <div class="acoes">
+            <a href="#"><i class="ri-camera-line"></i></a>
+            <a href="#"><i class="ri-search-line"></i></a>
+            <a href="#"><i class="ri-more-2-fill"></i></a>
+          </div>
+        </header>
+
+        <!-- Conteúdo das abas -->
+        <div class="content">
+          <div class="box chats">
+            <div class="data">
+              <div class="chatlist">
+                <div class="block" 
+                     data-nome="Francisco Cisco" 
+                     data-img="img/xinim.png" 
+                     data-status="Online" 
+                     data-msg="Boa tarde!" 
+                     data-hora="10:17">
+                  <div class="imgbx">
+                    <img class="img-fluid" src="img/xinim.png" alt="Xinim">
+                  </div>
+                  <div class="details">
+                    <div class="listHead">
+                      <h4>Francisco Cisco</h4>
+                      <p class="time">10:17</p>
+                    </div>
+                    <div class="msg_resumida">
+                      <p>Boa tarde!</p>
+                      <b>1</b>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="block" 
+                     data-nome="Arthur" 
+                     data-img="img/tutu.jpg" 
+                     data-status="Online" 
+                     data-msg="ok" 
+                     data-hora="Hoje">
+                  <div class="imgbx">
+                    <img class="img-fluid" src="img/tutu.jpg" alt="Arthur">
+                  </div>
+                  <div class="details">
+                    <div class="listHead">
+                      <h4>Arthur</h4>
+                      <p class="time">Hoje</p>
+                    </div>
+                    <div class="msg_resumida">
+                      <p>ok</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div data-name="index" class="page color-theme-blue">
-                <header>
-                    <a href="#" class="logo">WhatsApp 2</a>
-                    <div class="acoes">
-                        <a href="#"><i class="ri-camera-line"></i></a>
-                        <a href="#"><i class="ri-search-line"></i></a>
-                        <a href="#"><i class="ri-more-2-fill"></i></a>
-                    </div>
-                </header>
-                <div class="abas">
-                    <input type="radio" name="grupo" id="chats" checked>
-                    <input type="radio" name="grupo" id="status">
-                    <input type="radio" name="grupo" id="calls">
-                    <div class="buttons">
-                        <label for="chats">Conversas</label>
-                        <label for="status">Status</label>
-                        <label for="calls">Chamadas</label>
-                        <div class="underline"></div>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="box chats">
-                        <div class="data">
-                            <div class="chatlist">
-                                <div class="block" data-nome="Francisco Cisco" data-img="img/xinim.png" data-status="Online">
-                                    <div class="imgbx">
-                                        <img class="img-fluid" src="img/xinim.png" alt="Xinim">
-                                    </div>
-                                    <div class="details">
-                                        <div class="listHead">
-                                            <h4>Francisco Cisco</h4>
-                                            <p class="time">10:17</p>
-                                        </div>
-                                        <div class="msg_resumida">
-                                            <p>Boa tarde!</p>
-                                            <b>1</b>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="block" data-nome="Arthur" data-img="img/tutu.jpg" data-status="Online">
-                                    <div class="imgbx">
-                                        <img class="img-fluid" src="img/tutu.jpg" alt="Arthur">
-                                    </div>
-                                    <div class="details">
-                                        <div class="listHead">
-                                            <h4>Arthur</h4>
-                                            <p class="time">Hoje</p>
-                                        </div>
-                                        <div class="msg_resumida">
-                                            <p>ok</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="chatBox hide">
-                    <div class="chat_header">
-                        <div class="imgcontent">
-                            <i class="ri-arrow-left-fill"></i>
-                            <div class="imgbx">
-                                <img src="" alt="">
-                            </div>
-                            <h3><span class="nome-contato"></span> <br> <span class="status-contato"></span></h3>
-                        </div>
-                        <div class="acoesBtns">
-                            <i class="ri-video-on-fill"></i>
-                            <i class="ri-phone-fill"></i>
-                            <i class="ri-more-2-line"></i>
-                        </div>
-                    </div>
-                    <div class="messageBox">
-                        <div class="message">
-                            Boa tarde! <br> <span class="time">10:17</span>
-                        </div>
-                        <div class="messageInput">
-                            <div class="input">
-                                <i class="ri-emotion-happy-line"></i>
-                                <input type="text" placeholder="Mensagem">
-                                <i class="ri-attachment-line"></i>
-                                <i class="ri-camera-line"></i>
-                            </div>
-                            <div class="mic">
-                                <i class="ri-mic-line"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+
+        <!-- Tela de Chat -->
+        <div class="chatBox hide">
+          <div class="chat_header">
+            <div class="imgcontent">
+              <i class="ri-arrow-left-fill button"></i>
+              <div class="imgbx">
+                <img src="" alt="">
+              </div>
+              <h3>
+                <span class="nome-contato"></span><br>
+                <span class="status-contato"></span>
+              </h3>
             </div>
+            <div class="acoesBtns">
+              <i class="ri-video-on-fill"></i>
+              <i class="ri-phone-fill"></i>
+              <i class="ri-more-2-line"></i>
+            </div>
+          </div>
+
+          <div class="messageBox">
+            <div class="messageArea">
+              <!-- Mensagens vão aparecer aqui -->
+            </div>
+
+            <div class="messageInput">
+              <div class="input">
+                <i class="ri-emotion-happy-line"></i>
+                <input type="text" id="mensagemInput" placeholder="Mensagem">
+                <i class="ri-attachment-line"></i>
+                <i class="ri-camera-line"></i>
+              </div>
+              <div class="mic" id="botaoEnviar">
+                <i class="ri-mic-line"></i>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
-    <script>
-        const chatBox = document.querySelector('.chatBox');
-        const voltar = document.querySelector('.ri-arrow-left-fill');
-        const blocks = document.querySelectorAll('.chatlist .block');
-        const imgChat = document.querySelector('.chatBox .imgbx img');
-        const nomeChat = document.querySelector('.chatBox .nome-contato');
-        const statusChat = document.querySelector('.chatBox .status-contato');
+  <!-- SCRIPT -->
+  <script>
+    const chatBox = document.querySelector('.chatBox');
+    const voltar = document.querySelector('.ri-arrow-left-fill');
+    const blocks = document.querySelectorAll('.chatlist .block');
+    const imgChat = document.querySelector('.chatBox .imgbx img');
+    const nomeChat = document.querySelector('.chatBox .nome-contato');
+    const statusChat = document.querySelector('.chatBox .status-contato');
+    const messageArea = document.querySelector('.messageArea');
+    const mensagemInput = document.getElementById('mensagemInput');
+    const botaoEnviar = document.getElementById('botaoEnviar');
+    const botaoIcone = botaoEnviar.querySelector('i');
 
-        voltar.onclick = () => chatBox.classList.add('hide');
+    let nomeAtual = "";
+    let horaAtual = "";
 
-        blocks.forEach(block => {
-            block.addEventListener('click', () => {
-                const nome = block.getAttribute('data-nome');
-                const img = block.getAttribute('data-img');
-                const status = block.getAttribute('data-status');
+    voltar.onclick = () => chatBox.classList.add('hide');
 
-                nomeChat.textContent = nome;
-                imgChat.src = img;
-                statusChat.textContent = status;
+    blocks.forEach(block => {
+      block.addEventListener('click', () => {
+        const nome = block.getAttribute('data-nome');
+        const img = block.getAttribute('data-img');
+        const status = block.getAttribute('data-status');
+        const msg = block.getAttribute('data-msg');
+        const hora = block.getAttribute('data-hora');
 
-                chatBox.classList.remove('hide');
-            });
-        });
-    </script>
+        nomeAtual = nome;
+        horaAtual = hora;
 
-    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
-    <script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>
-    <script type="text/javascript" src="js/routes.js"></script>
-    <script src="cordova.js"></script>
+        nomeChat.textContent = nome;
+        imgChat.src = img;
+        statusChat.textContent = status;
+
+        messageArea.innerHTML = `
+          <div class="message">
+            ${msg}<br>
+            <span class="time">${hora}</span>
+          </div>
+        `;
+
+        chatBox.classList.remove('hide');
+      });
+    });
+
+    // Alterna ícone do botão
+    mensagemInput.addEventListener('input', () => {
+      if (mensagemInput.value.trim() !== "") {
+        botaoIcone.className = "ri-send-plane-2-fill";
+      } else {
+        botaoIcone.className = "ri-mic-line";
+      }
+    });
+
+    // Envia mensagem
+    botaoEnviar.addEventListener('click', () => {
+      const texto = mensagemInput.value.trim();
+      if (texto !== "") {
+        const hora = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        const novaMensagem = document.createElement('div');
+        novaMensagem.classList.add('message', 'sent');
+        novaMensagem.innerHTML = `${texto}<br><span class="time">${hora}</span>`;
+        messageArea.appendChild(novaMensagem);
+        mensagemInput.value = "";
+        botaoIcone.className = "ri-mic-line";
+        messageArea.scrollTop = messageArea.scrollHeight;
+      }
+    });
+  </script>
+
+  <!-- LIBS -->
+  <script src="lib/framework7-bundle.min.js"></script>
+  <script src="lib/jquery-3.7.0.min.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="cordova.js"></script>
 </body>
 </html>
